@@ -9,7 +9,7 @@
  */
 
 
-
+/* Rajout de la section "oscars" */
 
 .site-footer {
     flex-direction: column;
@@ -23,7 +23,6 @@
     margin-bottom: 16em;
 }
 
-
 .oscar_conteneur {
     display: flex;
     align-items: center;
@@ -31,9 +30,8 @@
     
 }
 
-
 .section_oscar h3 {
-    background: url("../foce/assets/images/orange_oscar.png") no-repeat center;
+    background: url("../foce-child/template/orange_oscar.png") no-repeat center;
     background-size: 100% 100%;
     padding: 1.5em 2em;     
     max-width: 750px;       
@@ -46,7 +44,7 @@
 }
 
 
-/* partie des fleurs tournantes, récuperation de toutes les fleurs dans le css parents */
+/* Partie des fleurs tournantes, récuperation de toutes les fleurs dans le css parents + keyframes pour la rotation */
 
 .site-footer::before, 
 .site-footer::after,
@@ -59,8 +57,81 @@
     animation: rotationFleur 21s linear infinite;
 }
 
+
 @keyframes rotationFleur {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
+
+/* Fade-in pour toutes les sections */
+
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s , transform 1s ;
+}
+
+section.present {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade-in pour les titres  */
+
+section h2,
+section h3 {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+section.present h2,
+section.present h3 {
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+/* animation de flotaison pour l'image */
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px); /* Le titre monte de 10px */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.banner img {
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+
+/* Partie vidéo en background, on a l'image en background du theme parent puis la video puis le logo */
+
+
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-video {
+    position: absolute;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.banner img {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .banner-video {
+        display: none;
+    }
+}

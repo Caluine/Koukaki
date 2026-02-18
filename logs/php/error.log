@@ -1,0 +1,50 @@
+[17-Feb-2026 11:05:12 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 37
+[17-Feb-2026 11:05:12 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 37
+[17-Feb-2026 11:05:52 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 36
+[17-Feb-2026 11:05:52 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 36
+[17-Feb-2026 11:05:53 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 36
+[17-Feb-2026 11:05:53 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 36
+[17-Feb-2026 11:24:05 UTC] PHP Parse error:  Unclosed '(' on line 34 does not match '}' in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 40
+[17-Feb-2026 11:24:05 UTC] PHP Parse error:  Unclosed '(' on line 34 does not match '}' in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 40
+[17-Feb-2026 11:24:21 UTC] PHP Parse error:  Unclosed '(' on line 34 does not match '}' in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 40
+[17-Feb-2026 11:24:21 UTC] PHP Parse error:  Unclosed '(' on line 34 does not match '}' in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 40
+[17-Feb-2026 11:24:21 UTC] PHP Parse error:  Unclosed '(' on line 34 does not match '}' in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 40
+[17-Feb-2026 11:24:22 UTC] PHP Parse error:  Unclosed '(' on line 34 does not match '}' in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 40
+[17-Feb-2026 11:24:53 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "je_enfant" not found or invalid function name in C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php:341
+Stack trace:
+#0 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#1 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#2 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\script-loader.php(2311): do_action('wp_enqueue_scri...')
+#3 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(341): wp_enqueue_scripts('')
+#4 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#5 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#6 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\general-template.php(3197): do_action('wp_head')
+#7 C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce\header.php(20): wp_head()
+#8 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(814): require_once('C:\\Users\\morte\\...')
+#9 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(749): load_template('C:\\Users\\morte\\...', true, Array)
+#10 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php(3): get_header()
+#12 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template-loader.php(125): include('C:\\Users\\morte\\...')
+#13 C:\Users\morte\Local Sites\koukaki\app\public\wp-blog-header.php(19): require_once('C:\\Users\\morte\\...')
+#14 C:\Users\morte\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\morte\\...')
+#15 {main}
+  thrown in C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php on line 341
+[17-Feb-2026 11:24:54 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "je_enfant" not found or invalid function name in C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php:341
+Stack trace:
+#0 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#1 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#2 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\script-loader.php(2311): do_action('wp_enqueue_scri...')
+#3 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(341): wp_enqueue_scripts('')
+#4 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#5 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#6 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\general-template.php(3197): do_action('wp_head')
+#7 C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce\header.php(20): wp_head()
+#8 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(814): require_once('C:\\Users\\morte\\...')
+#9 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(749): load_template('C:\\Users\\morte\\...', true, Array)
+#10 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php(3): get_header()
+#12 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template-loader.php(125): include('C:\\Users\\morte\\...')
+#13 C:\Users\morte\Local Sites\koukaki\app\public\wp-blog-header.php(19): require_once('C:\\Users\\morte\\...')
+#14 C:\Users\morte\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\morte\\...')
+#15 {main}
+  thrown in C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php on line 341
