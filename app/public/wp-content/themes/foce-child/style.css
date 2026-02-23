@@ -77,39 +77,46 @@ section.present {
   transform: translateY(0);
 }
 
-/* Fade-in pour les titres  */
 
-section h2,
-section h3 {
+/* Fade-in uniquement pour les titres */
+.titre span {
+  display: inline-block;
   opacity: 0;
-  transition: opacity 1s;
+  transform: translateY(20px);
+  transition: opacity 1s, transform 1s;
 }
 
-section.present h2,
-section.present h3 {
+.present .titre span {
   opacity: 1;
-  transition-delay: 0.5s;
+  transform: translateY(0);
 }
+
+.present .titre span:nth-child(1) { transition-delay: 0.4s; }
+.present .titre span:nth-child(2) { transition-delay: 0.6s; }
+.present .titre span:nth-child(3) { transition-delay: 0.8s; }
+.present .titre span:nth-child(4) { transition-delay: 1s; }
+
+.lieu-section {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 700px;  
+}
+
 
 /* animation de flotaison pour l'image */
 
 @keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px); /* Le titre monte de 10px */
-    }
-    100% {
-        transform: translateY(0px);
-    }
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(30px, -15px); }
+  50%  { transform: translate(10px, -30px); }
+  75%  { transform: translate(-30px, -15px); }
+  100% { transform: translate(0px, 0px); }
 }
 
 .banner img {
-    display: inline-block;
-    animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
-
 
 /* Partie vidéo en background, on a l'image en background du theme parent puis la video puis le logo */
 
@@ -135,3 +142,38 @@ section.present h3 {
         display: none;
     }
 }
+
+
+/* Partie scroll des nuages de la partie lieu */
+
+/* On s'assure que le parent est le référentiel */
+.story #place {
+    position: relative; 
+    display: flex;
+    background-image: url("./assets/images/Studio_Koukaki-image_place.png");
+    width: 100%;
+    min-height: 699px;
+    background-size: cover;
+}
+
+/* Style commun aux nuages */
+
+.nuage {
+    position: absolute;
+    transition: transform 0.2s linear; /* mouvement fluide */
+    overflow: hidden;
+}
+
+/* Positionnement uniquement */
+.petit-nuage {
+    top: 200px;
+    right: 50px;
+    filter: blur(5px);
+}
+
+.gros-nuage {
+    top: 50px;
+    right: 20px;
+    filter: blur(10px);
+}
+
