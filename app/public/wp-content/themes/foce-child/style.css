@@ -43,6 +43,26 @@
     width: 279px;
 }
 
+/* Responsive section Oscar */
+@media (max-width: 768px) {
+
+    .oscar_conteneur {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section_oscar h3 {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .oscar_conteneur img {
+        margin-top: 2em;
+    }
+
+}
+
 
 /* Partie des fleurs tournantes, récuperation de toutes les fleurs dans le css parents + keyframes pour la rotation */
 
@@ -116,6 +136,16 @@ section.present {
 
 .banner img {
   animation: float 3s ease-in-out infinite;
+}
+
+/* Paralaxe de l'image */
+
+.banner-logo {
+  position: relative;
+  z-index: 2;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* Partie vidéo en background, on a l'image en background du theme parent puis la video puis le logo */
