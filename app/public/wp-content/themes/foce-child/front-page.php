@@ -17,10 +17,10 @@ get_header();
         </div>
     </div>
 
-    <section id="#story" class="story">
+    <section id="story" class="story">
         <h2 class="titre">
             <span>L'</span>
-            <span>Histoire</span>
+            <span>histoire</span>
         </h2>
         <article id="" class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>

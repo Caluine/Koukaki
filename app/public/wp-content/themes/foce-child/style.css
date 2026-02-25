@@ -43,27 +43,6 @@
     width: 279px;
 }
 
-/* Responsive section Oscar */
-@media (max-width: 768px) {
-
-    .oscar_conteneur {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .section_oscar h3 {
-        text-align: center;
-        max-width: 100%;
-    }
-
-    .oscar_conteneur img {
-        margin-top: 2em;
-    }
-
-}
-
-
 /* Partie des fleurs tournantes, récuperation de toutes les fleurs dans le css parents + keyframes pour la rotation */
 
 .site-footer::before, 
@@ -75,6 +54,7 @@
 #studio h2::after,
 #studio > div::after {
     animation: rotationFleur 21s linear infinite;
+    transform-origin: center;
 }
 
 
@@ -106,21 +86,21 @@ section.present {
   transition: opacity 1s, transform 1s;
 }
 
-.present .titre span {
+.titre.present span {
   opacity: 1;
   transform: translateY(0);
 }
 
-.present .titre span:nth-child(1) { transition-delay: 0.4s; }
-.present .titre span:nth-child(2) { transition-delay: 0.6s; }
-.present .titre span:nth-child(3) { transition-delay: 0.8s; }
-.present .titre span:nth-child(4) { transition-delay: 1s; }
+.titre.present span:nth-child(1) { transition-delay: 0.4s; }
+.titre.present span:nth-child(2) { transition-delay: 0.6s; }
+.titre.present span:nth-child(3) { transition-delay: 0.8s; }
+.titre.present span:nth-child(4) { transition-delay: 1s; }
 
 .lieu-section {
     position: relative;
     display: block;
     width: 100%;
-    min-height: 700px;  
+   
 }
 
 
@@ -128,14 +108,14 @@ section.present {
 
 @keyframes float {
   0%   { transform: translate(0px, 0px); }
-  25%  { transform: translate(30px, -15px); }
-  50%  { transform: translate(10px, -30px); }
-  75%  { transform: translate(-30px, -15px); }
+  25%  { transform: translate(30px, -30px); }
+  50%  { transform: translate(-20px, 20px); }
+  75%  { transform: translate(10px, -30px); }
   100% { transform: translate(0px, 0px); }
 }
 
 .banner img {
-  animation: float 3s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
 }
 
 /* Paralaxe de l'image */
@@ -167,13 +147,6 @@ section.present {
     z-index: 2;
 }
 
-@media (max-width: 768px) {
-    .banner-video {
-        display: none;
-    }
-}
-
-
 /* Partie scroll des nuages de la partie lieu */
 
 /* On s'assure que le parent est le référentiel */
@@ -194,7 +167,7 @@ section.present {
     overflow: hidden;
 }
 
-/* Positionnement uniquement */
+/* Positionnement des nuages uniquement */
 .petit-nuage {
     top: 200px;
     right: 50px;
@@ -207,3 +180,43 @@ section.present {
     filter: blur(10px);
 }
 
+
+
+/* Partie header menu */
+
+
+
+
+
+
+
+/* Reponsive */
+
+@media (max-width: 768px) {
+
+    .oscar_conteneur {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section_oscar h3 {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .oscar_conteneur img {
+        margin-top: 2em;
+    }
+
+    h2 {
+        font-size: 28px; 
+    }
+    h3 {
+        font-size: 24px !important;
+    }
+    .banner-video {
+        display: none;
+    }
+
+}

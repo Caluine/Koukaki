@@ -2,7 +2,7 @@
 
 const allSections = document.querySelectorAll("section");
 const reglages = {
-	threshold: 0.15, // On déclenche quand 15% de la section est visible
+	threshold: 0.1, // On déclenche quand 15% de la section est visible
 };
 
 const apparitionSection = (sectionCible) => {
@@ -20,6 +20,32 @@ const sectionPresent = new IntersectionObserver(apparitionSection, reglages);
 allSections.forEach((section) => {
 	sectionPresent.observe(section);
 });
+
+
+
+// Effet de Fade In au scroll sur chaque titre
+
+const toutLesTitres = document.querySelectorAll(".titre");
+
+const apparitionTitre = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("present");
+      observer.unobserve(entry.target);
+    }
+  });
+};
+
+const titreObserver = new IntersectionObserver(apparitionTitre, {
+  threshold: 0.7, // déclenche quand 50% du titre est visible
+});
+
+toutLesTitres.forEach((titre) => {
+  titreObserver.observe(titre);
+});
+
+
+
 
 // Partie scroll nuage
 
@@ -77,3 +103,4 @@ window.addEventListener("scroll", function () {
 		positionScroll = positionActuelle;
 	}
 });
+
