@@ -104,3 +104,23 @@ window.addEventListener("scroll", function () {
 	}
 });
 
+
+// Menu burger on récupère menu toggle et au click on ajoute nav open
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.querySelector(".menu-deroulant");
+const menuItems = navMenu.querySelectorAll("li"); // tous les LI du menu
+
+  // on affiche au clic sur le burger
+  menuToggle.addEventListener("click", () => {
+    document.body.classList.toggle("menu-ouvert");
+  });
+
+  // on ferme le menu si on clique sur un LI
+  menuItems.forEach(item => {
+    item.addEventListener("click", () => {
+      document.body.classList.remove("menu-ouvert"); 
+    });
+  });
+});

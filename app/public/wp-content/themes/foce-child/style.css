@@ -31,7 +31,7 @@
 }
 
 .section_oscar h3 {
-    background: url("../foce-child/template/orange_oscar.png") no-repeat center;
+    background: url("../foce-child/assets/images/orange_oscar.png") no-repeat center;
     background-size: 100% 100%;
     padding: 1.5em 2em;     
     max-width: 750px;       
@@ -45,6 +45,11 @@
 
 /* Partie des fleurs tournantes, récuperation de toutes les fleurs dans le css parents + keyframes pour la rotation */
 
+.fleur-blanche img,
+.fleur-coin img,
+.fleur-droite img,
+.fleur-orange img,
+.fleur-violette img,
 .site-footer::before, 
 .site-footer::after,
 .site-footer ul::after,
@@ -114,7 +119,10 @@ section.present {
   100% { transform: translate(0px, 0px); }
 }
 
-.banner img {
+.banner img,
+.chat-noir,
+.chat-orange,
+.chat-violet {
   animation: float 5s ease-in-out infinite;
 }
 
@@ -148,8 +156,6 @@ section.present {
 }
 
 /* Partie scroll des nuages de la partie lieu */
-
-/* On s'assure que le parent est le référentiel */
 .story #place {
     position: relative; 
     display: flex;
@@ -181,13 +187,190 @@ section.present {
 }
 
 
-
 /* Partie header menu */
 
+/* Conteneur titre + burger */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;           
+  left: 0;          
+  width: 100%;      
+  height: 80px;
+  background-color: #FFD5A2;
+  z-index: 10;
+}
+
+/* Burger à droite */
+.menu-toggle {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  width: 50px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 11;
+}
+
+/* Barres du burger  */
+.menu-toggle-bar {
+  width: 100%;
+  height: 2px;
+  background: black;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Transformation en croix quand on ajoute navopen*/
+
+.menu-ouvert .menu-toggle-bar-top {
+  transform: translateY(12px) rotate(45deg);
+}
+
+.menu-ouvert .menu-toggle-bar-middle {
+  opacity: 0;
+}
+
+.menu-ouvert .menu-toggle-bar-bottom {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+/* Menu déroulant */
+
+.menu-deroulant {
+  position: fixed;
+  inset: 80px 0 0 0;
+  background-color: #FFF5E9;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.menu-ouvert .menu-deroulant {
+  transform: translateY(0);
+}
+
+/* chat */
+
+.chat-noir{
+    position: absolute;
+    top: 200px;
+    right: 100px ;
+    animation-delay: 0.3s;
+}
+
+.chat-violet{
+    position: absolute;
+    top: 75px;
+    left: 150px ;
+}
+
+.chat-orange{
+    position: absolute;
+    bottom: 25px;
+    left: 25px ;
+    animation-delay: 0.6s;
+}
+
+/* fleur */
+
+.fleur-orange{
+    position: absolute;
+    top: 300px;
+    left: 150px;
+}
+
+.fleur-blanche{
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+.fleur-blanche img{
+    width: 50%;
+    height: auto;
+}
+
+.fleur-violette{
+    position: absolute;
+    top: 50px;
+    left: -25px;
+}
+.fleur-violette img{
+    width: 50%;
+    height: auto;
+}
+
+.fleur-coin{
+    position: absolute;
+    bottom: -400px;
+    right: -400px;
+}
+
+.fleur-droite{
+    position:absolute;
+    right: -175px;
+    top: 150px;
+}
+.fleur-droite img{
+    width: 25%;
+    height: auto;
+}
 
 
+/* Liste du menu */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+}
 
+.nav-menu li a {
+    display: inline-block;
+    color: black;
+    font-size: 40px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+}
+.menu-ouvert .nav-menu li a {
+    opacity: 1;
+    transform: translateY(0);
+}
 
+.menu-ouvert .nav-menu li:nth-child(2) a { transition-delay: 0.2s; }
+.menu-ouvert .nav-menu li:nth-child(3) a { transition-delay: 0.4s; }
+.menu-ouvert .nav-menu li:nth-child(4) a { transition-delay: 0.6s; }
+.menu-ouvert .nav-menu li:nth-child(5) a { transition-delay: 0.8s; }
+
+.nav-menu li a:hover {
+  text-shadow:0 0 4px rgba(255, 127, 80, 0.9);
+}
+
+.nav-menu img {
+    width: 150px;
+    height: auto;
+    margin-top: 0px;
+}
+
+.menu-footer {
+    position: relative;
+    margin-top: 20px;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
 
 
 /* Reponsive */
@@ -218,5 +401,10 @@ section.present {
     .banner-video {
         display: none;
     }
+
+    .chat-menu,
+    .fleur-menu {
+    display: none;
+}
 
 }

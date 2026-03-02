@@ -6,6 +6,6 @@
             <span>aux Oscars Short </span>
             <span>Film Animated de 2022 !</span>
         </h3>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/template/oscar.png" alt="Nomination aux Oscars">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/oscar.png" alt="Nomination aux Oscars">
     </div>
 </section>
