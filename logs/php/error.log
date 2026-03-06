@@ -48,3 +48,69 @@ Stack trace:
 #14 C:\Users\morte\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\morte\\...')
 #15 {main}
   thrown in C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php on line 341
+[04-Mar-2026 09:38:03 UTC] PHP Warning:  Undefined variable $characters_query in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 10
+[04-Mar-2026 09:38:03 UTC] PHP Warning:  Attempt to read property "posts" on null in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 10
+[04-Mar-2026 09:38:03 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 10
+[04-Mar-2026 09:38:03 UTC] PHP Warning:  Attempt to read property "ID" on null in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 12
+[04-Mar-2026 09:38:03 UTC] PHP Warning:  Attempt to read property "post_title" on null in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 13
+[04-Mar-2026 09:38:03 UTC] PHP Warning:  Undefined variable $characters_query in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 15
+[04-Mar-2026 09:38:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function next_post() on null in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php:15
+Stack trace:
+#0 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(816): require()
+#1 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(749): load_template('C:\\Users\\morte\\...', false, Array)
+#2 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\general-template.php(206): locate_template(Array, true, false, Array)
+#3 C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php(38): get_template_part('template/carrou...')
+#4 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template-loader.php(125): include('C:\\Users\\morte\\...')
+#5 C:\Users\morte\Local Sites\koukaki\app\public\wp-blog-header.php(19): require_once('C:\\Users\\morte\\...')
+#6 C:\Users\morte\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\morte\\...')
+#7 {main}
+  thrown in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 15
+[04-Mar-2026 09:56:14 UTC] PHP Warning:  Undefined variable $characters_query in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 15
+[04-Mar-2026 09:56:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function have_posts() on null in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php:15
+Stack trace:
+#0 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(816): require()
+#1 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(749): load_template('C:\\Users\\morte\\...', false, Array)
+#2 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\general-template.php(206): locate_template(Array, true, false, Array)
+#3 C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php(29): get_template_part('template/carrou...')
+#4 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template-loader.php(125): include('C:\\Users\\morte\\...')
+#5 C:\Users\morte\Local Sites\koukaki\app\public\wp-blog-header.php(19): require_once('C:\\Users\\morte\\...')
+#6 C:\Users\morte\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\morte\\...')
+#7 {main}
+  thrown in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 15
+[04-Mar-2026 09:58:55 UTC] PHP Warning:  Undefined variable $characters_query in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 15
+[04-Mar-2026 09:58:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function have_posts() on null in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php:15
+Stack trace:
+#0 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(816): require()
+#1 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(749): load_template('C:\\Users\\morte\\...', false, Array)
+#2 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\general-template.php(206): locate_template(Array, true, false, Array)
+#3 C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php(29): get_template_part('template/carrou...')
+#4 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template-loader.php(125): include('C:\\Users\\morte\\...')
+#5 C:\Users\morte\Local Sites\koukaki\app\public\wp-blog-header.php(19): require_once('C:\\Users\\morte\\...')
+#6 C:\Users\morte\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\morte\\...')
+#7 {main}
+  thrown in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 15
+[04-Mar-2026 09:59:13 UTC] PHP Warning:  Undefined variable $characters_query in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 15
+[04-Mar-2026 09:59:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function have_posts() on null in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php:15
+Stack trace:
+#0 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(816): require()
+#1 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(749): load_template('C:\\Users\\morte\\...', false, Array)
+#2 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\general-template.php(206): locate_template(Array, true, false, Array)
+#3 C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php(29): get_template_part('template/carrou...')
+#4 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template-loader.php(125): include('C:\\Users\\morte\\...')
+#5 C:\Users\morte\Local Sites\koukaki\app\public\wp-blog-header.php(19): require_once('C:\\Users\\morte\\...')
+#6 C:\Users\morte\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\morte\\...')
+#7 {main}
+  thrown in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 15
+[04-Mar-2026 09:59:18 UTC] PHP Warning:  Undefined variable $characters_query in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 15
+[04-Mar-2026 09:59:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function have_posts() on null in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php:15
+Stack trace:
+#0 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(816): require()
+#1 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template.php(749): load_template('C:\\Users\\morte\\...', false, Array)
+#2 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\general-template.php(206): locate_template(Array, true, false, Array)
+#3 C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php(29): get_template_part('template/carrou...')
+#4 C:\Users\morte\Local Sites\koukaki\app\public\wp-includes\template-loader.php(125): include('C:\\Users\\morte\\...')
+#5 C:\Users\morte\Local Sites\koukaki\app\public\wp-blog-header.php(19): require_once('C:\\Users\\morte\\...')
+#6 C:\Users\morte\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\morte\\...')
+#7 {main}
+  thrown in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 15
+[04-Mar-2026 10:26:04 UTC] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in C:\Users\morte\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template\carroussel-chat.php on line 35

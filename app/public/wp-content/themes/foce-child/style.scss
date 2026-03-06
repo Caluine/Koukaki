@@ -7,48 +7,51 @@
  Template: foce
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
- */
-/* Rajout de la section "oscars" */
+*/
+
 .site-footer {
   flex-direction: column;
   align-items: center;
   padding-top: 0;
+
+  &::before,
+  &::after,
+  ul::after {
+    animation: rotationFleur 21s linear infinite;
+    transform-origin: center;
+  }
 }
 
 .section_oscar {
   width: 80%;
-  margin-top: 8em;
-  margin-bottom: 16em;
+  margin: 8em 0 16em;
+
+  h3 {
+    background: url("../foce-child/assets/images/orange_oscar.png") no-repeat center;
+    background-size: 100% 100%;
+    padding: 1.5em 2em;
+    max-width: 750px;
+    font-size: 32px;
+    text-align: left;
+  }
+
+  .oscar_conteneur {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    img {
+      width: 279px;
+    }
+  }
 }
 
-.oscar_conteneur {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.section_oscar h3 {
-  background: url("../foce-child/assets/images/orange_oscar.png") no-repeat center;
-  background-size: 100% 100%;
-  padding: 1.5em 2em;
-  max-width: 750px;
-  font-size: 32px;
-  text-align: left;
-}
-
-.oscar_conteneur img {
-  width: 279px;
-}
-
-/* Partie des fleurs tournantes, récuperation de toutes les fleurs dans le css parents + keyframes pour la rotation */
+/* rotation des fleurs */
 .fleur-blanche img,
 .fleur-coin img,
 .fleur-droite img,
 .fleur-orange img,
 .fleur-violette img,
-.site-footer::before,
-.site-footer::after,
-.site-footer ul::after,
 .story h2::after,
 .story__article::after,
 #studio h2::before,
@@ -59,115 +62,69 @@
 }
 
 @keyframes rotationFleur {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* Fade-in pour toutes les sections */
+/* fade in pour les sections et titres*/
 section {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s, transform 1s;
+  scroll-margin-top: 100px;
+
+  &.present {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-section.present {
-  opacity: 1;
-  transform: translateY(0);
+.titre {
+  span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+  }
+
+  &.present {
+    span {
+      opacity: 1;
+      transform: translateY(0);
+
+      &:nth-child(1) { transition-delay: 0.4s; }
+      &:nth-child(2) { transition-delay: 0.6s; }
+      &:nth-child(3) { transition-delay: 0.8s; }
+      &:nth-child(4) { transition-delay: 1s; }
+    }
+  }
 }
 
-/* Fade-in uniquement pour les titres */
-.titre span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s, transform 1s;
-}
-
-.titre.present span {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.titre.present span:nth-child(1) {
-  transition-delay: 0.4s;
-}
-
-.titre.present span:nth-child(2) {
-  transition-delay: 0.6s;
-}
-
-.titre.present span:nth-child(3) {
-  transition-delay: 0.8s;
-}
-
-.titre.present span:nth-child(4) {
-  transition-delay: 1s;
-}
-
+/* section lieu avec les nuages */
 .lieu-section {
   position: relative;
   display: block;
   width: 100%;
-}
 
-/* animation de flotaison pour l'image */
-@keyframes float {
-  0% {
-    transform: translate(0px, 0px);
+  .nuage {
+    position: absolute;
+    transition: transform 0.2s linear;
+    overflow: hidden;
   }
-  25% {
-    transform: translate(30px, -30px);
+
+  .petit-nuage {
+    top: 200px;
+    right: 50px;
+    filter: blur(5px);
   }
-  50% {
-    transform: translate(-20px, 20px);
-  }
-  75% {
-    transform: translate(10px, -30px);
-  }
-  100% {
-    transform: translate(0px, 0px);
+
+  .gros-nuage {
+    top: 50px;
+    right: 20px;
+    filter: blur(10px);
   }
 }
 
-.banner img,
-.chat-noir,
-.chat-orange,
-.chat-violet {
-  animation: float 5s ease-in-out infinite;
-}
-
-/* Paralaxe de l'image */
-.banner-logo {
-  position: relative;
-  z-index: 2;
-  min-width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-/* Partie vidéo en background, on a l'image en background du theme parent puis la video puis le logo */
-.banner {
-  position: relative;
-  overflow: hidden;
-}
-
-.banner-video {
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
-  z-index: 1;
-}
-
-.banner img {
-  position: relative;
-  z-index: 2;
-}
-
-/* Partie scroll des nuages de la partie lieu */
 .story #place {
   position: relative;
   display: flex;
@@ -177,28 +134,48 @@ section.present {
   background-size: cover;
 }
 
-/* Style commun aux nuages */
-.nuage {
-  position: absolute;
-  transition: transform 0.2s linear; /* mouvement fluide */
+/* animation de flotaison */
+@keyframes float {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(30px, -30px); }
+  50%  { transform: translate(-20px, 20px); }
+  75%  { transform: translate(10px, -30px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+.banner {
+  position: relative;
   overflow: hidden;
+
+  img {
+    position: relative;
+    z-index: 2;
+    animation: float 5s ease-in-out infinite;
+  }
+// Partie background video
+  &-video {
+    position: absolute;
+    -o-object-fit: cover;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  &-logo {
+    position: relative;
+    z-index: 2;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
-/* Positionnement des nuages uniquement */
-.petit-nuage {
-  top: 200px;
-  right: 50px;
-  filter: blur(5px);
+.chat-noir,
+.chat-orange,
+.chat-violet {
+  animation: float 5s ease-in-out infinite;
 }
 
-.gros-nuage {
-  top: 50px;
-  right: 20px;
-  filter: blur(10px);
-}
-
-/* Partie header menu */
-/* Conteneur titre + burger */
+/* header */
 .nav-container {
   display: flex;
   justify-content: center;
@@ -212,7 +189,6 @@ section.present {
   z-index: 10;
 }
 
-/* Burger à droite */
 .menu-toggle {
   position: absolute;
   right: 30px;
@@ -224,31 +200,53 @@ section.present {
   justify-content: space-between;
   cursor: pointer;
   z-index: 11;
+
+  &-bar {
+    width: 100%;
+    height: 2px;
+    background: black;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
 }
 
-/* Barres du burger  */
-.menu-toggle-bar {
-  width: 100%;
-  height: 2px;
-  background: black;
-  border-radius: 2px;
-  transition: all 0.3s;
+.menu-ouvert {
+
+  /* animation du burger */
+  .menu-toggle-bar-top {
+    transform: translateY(12px) rotate(45deg);
+  }
+
+  .menu-toggle-bar-middle {
+    opacity: 0;
+  }
+
+  .menu-toggle-bar-bottom {
+    transform: translateY(-12px) rotate(-45deg);
+  }
+
+  
+  .menu-deroulant {
+    transform: translateY(0);
+  }
+
+  /* fade in des liens */
+  .nav-menu {
+
+    li {
+      a {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    li:nth-child(2) a { transition-delay: 0.2s; }
+    li:nth-child(3) a { transition-delay: 0.4s; }
+    li:nth-child(4) a { transition-delay: 0.6s; }
+    li:nth-child(5) a { transition-delay: 0.8s; }
+  }
 }
 
-/* Transformation en croix quand on ajoute navopen*/
-.menu-ouvert .menu-toggle-bar-top {
-  transform: translateY(12px) rotate(45deg);
-}
-
-.menu-ouvert .menu-toggle-bar-middle {
-  opacity: 0;
-}
-
-.menu-ouvert .menu-toggle-bar-bottom {
-  transform: translateY(-12px) rotate(-45deg);
-}
-
-/* Menu déroulant */
 .menu-deroulant {
   position: fixed;
   inset: 80px 0 0 0;
@@ -263,123 +261,30 @@ section.present {
   overflow: hidden;
 }
 
-.menu-ouvert .menu-deroulant {
-  transform: translateY(0);
-}
-
-/* chat */
-.chat-noir {
-  position: absolute;
-  top: 200px;
-  right: 100px;
-  animation-delay: 0.3s;
-}
-
-.chat-violet {
-  position: absolute;
-  top: 75px;
-  left: 150px;
-}
-
-.chat-orange {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-  animation-delay: 0.6s;
-}
-
-/* fleur */
-.fleur-orange {
-  position: absolute;
-  top: 300px;
-  left: 150px;
-}
-
-.fleur-blanche {
-  position: absolute;
-  top: 30px;
-  right: 50px;
-}
-
-.fleur-blanche img {
-  width: 50%;
-  height: auto;
-}
-
-.fleur-violette {
-  position: absolute;
-  top: 50px;
-  left: -25px;
-}
-
-.fleur-violette img {
-  width: 50%;
-  height: auto;
-}
-
-.fleur-coin {
-  position: absolute;
-  bottom: -400px;
-  right: -400px;
-}
-
-.fleur-droite {
-  position: absolute;
-  right: -175px;
-  top: 150px;
-}
-
-.fleur-droite img {
-  width: 25%;
-  height: auto;
-}
-
-/* Liste du menu */
 .nav-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-}
 
-.nav-menu li a {
-  display: inline-block;
-  color: black;
-  font-size: 40px;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: opacity 1s, transform 1s;
-}
+  li {
+    a {
+      display: inline-block;
+      color: black;
+      font-size: 40px;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: opacity 1s, transform 1s;
 
-.menu-ouvert .nav-menu li a {
-  opacity: 1;
-  transform: translateY(0);
-}
+      &:hover { text-shadow: 0 0 4px rgba(255, 127, 80, 0.9); }
+    }
+  }
 
-.menu-ouvert .nav-menu li:nth-child(2) a {
-  transition-delay: 0.2s;
-}
-
-.menu-ouvert .nav-menu li:nth-child(3) a {
-  transition-delay: 0.4s;
-}
-
-.menu-ouvert .nav-menu li:nth-child(4) a {
-  transition-delay: 0.6s;
-}
-
-.menu-ouvert .nav-menu li:nth-child(5) a {
-  transition-delay: 0.8s;
-}
-
-.nav-menu li a:hover {
-  text-shadow: 0 0 4px rgba(255, 127, 80, 0.9);
-}
-
-.nav-menu img {
-  width: 150px;
-  height: auto;
-  margin-top: 0px;
+  img {
+    width: 150px;
+    height: auto;
+    margin-top: 0;
+  }
 }
 
 .menu-footer {
@@ -387,35 +292,61 @@ section.present {
   margin-top: 20px;
 }
 
-section {
-  scroll-margin-top: 100px;
+/* position chat et fleur du menu deroulant */
+.chat-noir { position: absolute; top: 200px; right: 100px; animation-delay: 0.3s; }
+.chat-violet { position: absolute; top: 75px; left: 150px; }
+.chat-orange { position: absolute; bottom: 25px; left: 25px; animation-delay: 0.6s; }
+
+.fleur-orange { position: absolute; top: 300px; left: 150px; }
+.fleur-blanche { position: absolute; top: 30px; right: 50px;
+  img { width: 50%; height: auto; }
+}
+.fleur-violette { position: absolute; top: 50px; left: -25px;
+  img { width: 50%; height: auto; }
+}
+.fleur-coin { position: absolute; bottom: -400px; right: -400px; }
+.fleur-droite { position: absolute; right: -175px; top: 150px;
+  img { width: 25%; height: auto; }
 }
 
-/* Reponsive */
+
+// carroussel chat
+
+#characters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.swiper-slide img {
+    width: 320px;
+    height: auto;
+}
+
+
+/* responsive */
 @media (max-width: 768px) {
   .oscar_conteneur {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .section_oscar h3 {
-    text-align: center;
-    max-width: 100%;
-  }
-  .oscar_conteneur img {
-    margin-top: 2em;
-  }
-  h2 {
-    font-size: 28px;
-  }
-  h3 {
-    font-size: 24px !important;
-  }
-  .banner-video {
-    display: none;
-  }
+
+  .section_oscar h3 { text-align: center; max-width: 100%; }
+
+  .oscar_conteneur img { margin-top: 2em; }
+
+  h2 { font-size: 28px; }
+  h3 { font-size: 24px !important; }
+
+  .banner-video,
   .chat-menu,
-  .fleur-menu {
-    display: none;
-  }
+  .fleur-menu { display: none; }
+  .site-title a {font-size: 20px;}
+}
+
+@media (max-width: 500px) {
+    .site-title a {
+        font-size: 10px;
+    }
 }

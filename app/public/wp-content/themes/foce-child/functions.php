@@ -42,3 +42,33 @@ function js_enfant()
     );
 }
 add_action('wp_enqueue_scripts', 'js_enfant');
+
+// On charge le coverflow JS 
+
+function koukaki_enqueue_swiper() {
+
+    wp_enqueue_style(
+        'swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        '11.0.0'
+    );
+
+    wp_enqueue_script(
+        'swiper-js',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        array(),
+        '11.0.0',
+        true
+    );
+
+    wp_enqueue_script(
+        'koukaki-carrousel',
+        get_stylesheet_directory_uri() . '/js/carroussel.js',
+        array('swiper-js'),
+        '1.0',
+        true
+    );
+}
+
+add_action('wp_enqueue_scripts', 'koukaki_enqueue_swiper');
