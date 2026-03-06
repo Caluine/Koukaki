@@ -22,6 +22,10 @@
   }
 }
 
+.main-navigation{
+  ul{display: flex!important;}
+}
+
 .section_oscar {
   width: 80%;
   margin: 8em 0 16em;
@@ -316,13 +320,29 @@ section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    figure {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h3 {
+        background-image: url("./assets/images/orange_characters_bg.png");
+    }
 }
 
-.swiper-slide img {
-    width: 320px;
-    height: auto;
+
+.swiper {
+  width: 100%;
+  overflow: hidden;
 }
 
+.swiper-slide {
+  height: auto;
+  width: auto;
+}
 
 /* responsive */
 @media (max-width: 768px) {
@@ -330,11 +350,10 @@ section {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    img { margin-top: 2em; }
   }
 
   .section_oscar h3 { text-align: center; max-width: 100%; }
-
-  .oscar_conteneur img { margin-top: 2em; }
 
   h2 { font-size: 28px; }
   h3 { font-size: 24px !important; }
@@ -343,7 +362,12 @@ section {
   .chat-menu,
   .fleur-menu { display: none; }
   .site-title a {font-size: 20px;}
+
+  .nav-menu li a {font-size: 30px;}
 }
+
+
+
 
 @media (max-width: 500px) {
     .site-title a {

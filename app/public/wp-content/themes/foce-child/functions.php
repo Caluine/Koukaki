@@ -43,20 +43,20 @@ function js_enfant()
 }
 add_action('wp_enqueue_scripts', 'js_enfant');
 
-// On charge le coverflow JS 
+// On charge le css puis le js du coverflow et enfin on charge notre coverflow mais le script dépend de Swiper (avec array) 
 
-function koukaki_enqueue_swiper() {
+function koukaki_enqueue() {
 
     wp_enqueue_style(
         'swiper-css',
-        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        'https://unpkg.com/swiper/swiper-bundle.min.css?ver=6.9.1',
         array(),
         '11.0.0'
     );
 
     wp_enqueue_script(
         'swiper-js',
-        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        'https://unpkg.com/swiper/swiper-bundle.min.js',
         array(),
         '11.0.0',
         true
@@ -71,4 +71,4 @@ function koukaki_enqueue_swiper() {
     );
 }
 
-add_action('wp_enqueue_scripts', 'koukaki_enqueue_swiper');
+add_action('wp_enqueue_scripts', 'koukaki_enqueue');

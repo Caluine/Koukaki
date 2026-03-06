@@ -25,9 +25,10 @@ get_header();
         <article id="" class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
+    </section>
         <!-- Renvoi de la section personnages vers le template carroussel-chat -->
         <?php get_template_part('template/carroussel-chat'); ?>
-        
+        <section class="story">
         <section class="lieu-section">
             <article id="place">
 
